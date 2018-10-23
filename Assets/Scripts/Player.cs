@@ -10,8 +10,8 @@ public class Player : Character {
 	// Use this for initialization
 	void Start () 
   {
-		speed = 25f;
-    dashSpeed = 50f;
+		speed = 10f;
+    dashSpeed = 30f;
     startDashTime = 0.1f;
 	}
 	
@@ -32,7 +32,7 @@ public class Player : Character {
 
   private void GetInput()
   {
-    direction = Vector2.zero;
+    direction = Vector3.zero;
     
     // Directional inputs.
     if (Input.GetKey(KeyCode.W)) {
@@ -84,7 +84,7 @@ public class Player : Character {
   {
     if (currentState == CharacterState.Ready)
     {
-
+      GameObject spell = Instantiate(spellOne, spellOneLaunchPoint.transform.position, spellOneLaunchPoint.transform.rotation);
     }
   }
 }
