@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class SpellProjectile : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		GetComponent<Rigidbody>().velocity = transform.forward * 40;
+  public float projectileSpeed;
+  public float lifeSpan;
 
-    Destroy(gameObject, 3.0f);
-	}
-	
-	// // Update is called once per frame
-	// void Update () {
-		
-	// }
+	void Start () 
+  {
+		GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed;
+
+    Destroy(gameObject, lifeSpan);
+  }
 }

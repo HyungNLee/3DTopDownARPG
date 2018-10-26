@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Character {
-
-  public GameObject spellOne;
-  public GameObject spellOneLaunchPoint;
+// *Need to move spell variables and scripts to master spell script.
+  // Right click spell variables
+  public GameObject rightClickProjectile;
+  public GameObject rightClickLaunchPoint;
+  // 'Q' spell variables
+  public GameObject qSpellProjectile;
 
 	// Use this for initialization
 	void Start () 
@@ -58,7 +61,13 @@ public class Player : Character {
     // Right click spell
     if (Input.GetMouseButtonDown(1))
     {
-      castSpellOne();
+      castRightClickSpell();
+    }
+
+    // 'Q' spell
+    if (Input.GetKeyDown(KeyCode.Q))
+    {
+      castQSpell();
     }
   }
 
@@ -79,12 +88,25 @@ public class Player : Character {
     }
   }
 
-  // Spell One Function.
-  private void castSpellOne()
+  // Right click spell function.
+  private void castRightClickSpell()
   {
     if (currentState == CharacterState.Ready)
     {
-      GameObject spell = Instantiate(spellOne, spellOneLaunchPoint.transform.position, spellOneLaunchPoint.transform.rotation);
+      GameObject spell = Instantiate(rightClickProjectile, rightClickLaunchPoint.transform.position, rightClickLaunchPoint.transform.rotation);
+    }
+  }
+
+  // 'Q' spellcast function
+  private void castQSpell()
+  {
+    Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+    RaycastHit floorHit;
+
+    if (currentState == CharacterState.Ready && Physics.Raycast (camRay, out floorHit, 100f))
+    {
+      GameObject spell = Instantiate(qSpellProjectile, floorHit.point, rightClickLaunchPoint.transform.rotation);
     }
   }
 }

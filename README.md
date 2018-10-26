@@ -8,9 +8,10 @@
   * Added dashing functionality with the hotkey 'Space'.
   * Added Turning() in 'player' so the player will always face where the mouse is.
 * Added enum states to character script.
+* Added right-click and 'Q' spell cast functions.
 
 #### Work in Progress Features
-* Working on casting a spell with right click. The spell should fly towards where the mouse was when clicked and disappear after hitting something or a certain distance.
+* Master spell link to house all spells instead of hard coding them into the player script.
 
 ###### Notes
 * [SerializeField] -> above a variable allows the variable to be private but still show up in the Unity editor.

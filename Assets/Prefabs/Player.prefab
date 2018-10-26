@@ -1451,7 +1451,7 @@ GameObject:
   - component: {fileID: 136843345362245450}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5952,8 +5952,11 @@ MonoBehaviour:
   rb: {fileID: 0}
   dashSpeed: 0
   startDashTime: 0
-  spellOne: {fileID: 1535535504169754, guid: a003f46a06ab5c8418250118a67a25e6, type: 2}
-  spellOneLaunchPoint: {fileID: 1966602973662634}
+  rightClickProjectile: {fileID: 1535535504169754, guid: a003f46a06ab5c8418250118a67a25e6,
+    type: 2}
+  rightClickLaunchPoint: {fileID: 1966602973662634}
+  qSpellProjectile: {fileID: 1907147054189030, guid: 350eacd2127728f488fcfd7bdf0e4ede,
+    type: 2}
 --- !u!136 &136085857029037150
 CapsuleCollider:
   m_ObjectHideFlags: 1
